@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 
+import { Sidebar } from '@/components/sidebar';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,13 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={
-        cn(
+      <body
+        className={cn(
           inter.className,
           'min-h-screen bg-background font-sans antialiased',
-          inter.className
-        )
-      }>{children}</body>
+          inter.className,
+        )}
+      >
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }
