@@ -7,7 +7,7 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 
 export default function ChartOverview() {
   const chartData = [
-    { month: 'janeiro', desktop: 186, mobile: 80 },
+    { month: 'Janeiro', desktop: 186, mobile: 80 },
     { month: 'Fevereiro', desktop: 305, mobile: 200 },
     { month: 'Março', desktop: 237, mobile: 120 },
     { month: 'Abril', desktop: 73, mobile: 190 },
@@ -18,11 +18,11 @@ export default function ChartOverview() {
   const chartConfig = {
     desktop: {
       label: 'Desktop',
-      color: '#2563eb',
+      color: '#b2d12e',
     },
     mobile: {
       label: 'Mobile',
-      color: '#60a5fa',
+      color: '#94af1c',
     },
   } satisfies ChartConfig;
 
