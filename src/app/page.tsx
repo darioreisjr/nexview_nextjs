@@ -1,3 +1,4 @@
+import ChartOverview from '@/components/chart';
 import {
   Card,
   CardContent,
@@ -23,7 +24,7 @@ export default function Home() {
             <CardDescription>Total de vendas em 90 dias</CardDescription>
           </CardHeader>
 
-          <CardContent >
+          <CardContent>
             <p className="text-base sm:text-lg font-bold">R$ 40.000</p>
           </CardContent>
         </Card>
@@ -40,7 +41,7 @@ export default function Home() {
             <CardDescription>Novos clientes em 30 dias</CardDescription>
           </CardHeader>
 
-          <CardContent >
+          <CardContent>
             <p className="text-base sm:text-lg font-bold">592</p>
           </CardContent>
         </Card>
@@ -57,7 +58,7 @@ export default function Home() {
             <CardDescription>Total pedidos hoje</CardDescription>
           </CardHeader>
 
-          <CardContent >
+          <CardContent>
             <p className="text-base sm:text-lg font-bold">46</p>
           </CardContent>
         </Card>
@@ -74,10 +75,14 @@ export default function Home() {
             <CardDescription>Total pedidos em 30 dias</CardDescription>
           </CardHeader>
 
-          <CardContent >
+          <CardContent>
             <p className="text-base sm:text-lg font-bold">2780</p>
           </CardContent>
         </Card>
+      </section>
+
+      <section className="mt-4 flex flex-col md:flex-row gap-4">
+        <ChartOverview />
       </section>
     </main>
   );
