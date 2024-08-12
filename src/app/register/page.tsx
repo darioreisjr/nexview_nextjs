@@ -64,9 +64,9 @@ export default function Register() {
           Register
         </Button>
         <p className="mt-2 text-center text-sm">
-          Already have an account?{' '}
+          Já tem uma conta?{' '}
           <Link href="/login" className="text-blue-500 hover:underline">
-            Login
+            Entrar
           </Link>
         </p>
       </form>

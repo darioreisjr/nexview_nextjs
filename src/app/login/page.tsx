@@ -48,9 +48,9 @@ export default function Login() {
           Login
         </Button>
         <p className="mt-2 text-center text-sm">
-          Don't have an account?{' '}
+          Não tem uma conta?{' '}
           <Link href="/register" className="text-blue-500 hover:underline">
-            Register
+            Registre-se
           </Link>
         </p>
       </form>
