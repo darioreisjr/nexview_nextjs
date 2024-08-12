@@ -11,11 +11,11 @@ export function SidebarNavigation() {
         <IconLink href="#" icon={ShoppingBag} tooltip="Pedidos" />
         <IconLink href="#" icon={Package} tooltip="Produtos" />
         <IconLink href="#" icon={Users} tooltip="Clientes" />
-        <IconLink href="#" icon={Settings2} tooltip="Configurações" />
+        <IconLink href="/settings" icon={Settings2} tooltip="Configurações" />
       </nav>
 
       <nav className="mt-auto flex flex-col items-center gap-4 px-2 py-5">
-        <IconLink href="#" icon={LogOut} tooltip="Sair" className="text-red-500" />
+        <IconLink href="/login" icon={LogOut} tooltip="Sair" className="text-red-500" />
       </nav>
     </TooltipProvider>
   );

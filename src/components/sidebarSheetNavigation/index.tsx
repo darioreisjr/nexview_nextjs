@@ -17,7 +17,7 @@ function SidebarSheetNavigation() {
       <SidebarSheetLink href="#" icon={ShoppingBag} label="Pedidos" />
       <SidebarSheetLink href="#" icon={Package} label="Produtos" />
       <SidebarSheetLink href="#" icon={Users} label="Clientes" />
-      <SidebarSheetLink href="#" icon={Settings2} label="Configurações" />
+      <SidebarSheetLink href="/settings" icon={Settings2} label="Configurações" />
     </nav>
   );
 }
