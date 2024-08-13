@@ -1,11 +1,11 @@
-'use client'
+'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select } from '@/components/ui/select';
+import { Select, SelectContent, SelectItem } from '@/components/ui/select'; // Verifique a importação correta dos componentes de Select e SelectItem.
 import { Switch } from '@/components/ui/switch';
 import { Textarea } from '@/components/ui/textarea';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 export default function Settings() {
   const [username, setUsername] = useState<string>('');
@@ -14,13 +14,33 @@ export default function Settings() {
   const [notifications, setNotifications] = useState<boolean>(true);
   const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('light');
 
-  const handleSaveSettings = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSaveSettings = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Bio:', bio);
     console.log('Notifications:', notifications);
     console.log('Theme:', theme);
+  };
+
+  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleBioChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setBio(e.target.value);
+  };
+
+  const handleNotificationsChange = (checked: boolean) => {
+    setNotifications(checked);
+  };
+
+  const handleThemeChange = (value: 'light' | 'dark' | 'system') => {
+    setTheme(value);
   };
 
   return (
@@ -36,7 +56,7 @@ export default function Settings() {
           <Input
             id="username"
             value={username}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
+            onChange={handleUsernameChange}
             required
             className="mt-1"
           />
@@ -48,7 +68,7 @@ export default function Settings() {
             id="email"
             type="email"
             value={email}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            onChange={handleEmailChange}
             required
             className="mt-1"
           />
@@ -59,7 +79,7 @@ export default function Settings() {
           <Textarea
             id="bio"
             value={bio}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setBio(e.target.value)}
+            onChange={handleBioChange}
             className="mt-1"
           />
         </div>
@@ -69,21 +89,21 @@ export default function Settings() {
           <Switch
             id="notifications"
             checked={notifications}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setNotifications(e.target.checked)}
+            onCheckedChange={handleNotificationsChange} // Alterado para `onCheckedChange`
           />
         </div>
 
         <div>
           <Label htmlFor="theme">Theme</Label>
           <Select
-            id="theme"
-            value={theme}
-            onChange={(e: ChangeEvent<HTMLSelectElement>) => setTheme(e.target.value)}
-            className="mt-1"
+            // id="theme"
+            // value={theme}
+            // onValueChange={handleThemeChange} // Alterado para `onValueChange`
+            // className="mt-1"
           >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="system">System</option>
+            <SelectItem value="light">Light</SelectItem>
+            <SelectItem value="dark">Dark</SelectItem>
+            <SelectItem value="system">System</SelectItem>
           </Select>
         </div>
 
