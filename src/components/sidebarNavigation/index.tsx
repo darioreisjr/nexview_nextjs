@@ -10,7 +10,7 @@ export function SidebarNavigation() {
         <IconLink href="#" icon={Home} tooltip="Início" />
         <IconLink href="#" icon={ShoppingBag} tooltip="Pedidos" />
         <IconLink href="#" icon={Package} tooltip="Produtos" />
-        <IconLink href="#" icon={Users} tooltip="Clientes" />
+        <IconLink href="/clientPage" icon={Users} tooltip="Clientes" />
         <IconLink href="/settings" icon={Settings2} tooltip="Configurações" />
       </nav>
 
