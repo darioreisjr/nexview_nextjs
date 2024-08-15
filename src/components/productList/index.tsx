@@ -1,7 +1,9 @@
+'use client'
 import React, { useState } from 'react';
-import { ProductDetailModal } from './ProductDetailModal';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { ProductDetailModal } from '../productDetailModal';
+import Image from 'next/image';
 
 type Product = {
   id: number;
@@ -43,7 +45,7 @@ export const ProductList: React.FC = () => {
               <CardTitle>{product.name}</CardTitle>
             </CardHeader>
             <CardContent>
-              <img src={product.imageUrl} alt={product.name} className="w-full h-32 object-cover" />
+              <Image src={product.imageUrl} alt={product.name} width={50} height={50} className="w-full h-32 object-cover" />
               <p className="text-gray-600">{product.price}</p>
               <p className="text-gray-500">{product.description}</p>
             </CardContent>
@@ -58,7 +60,7 @@ export const ProductList: React.FC = () => {
         ))}
       </div>
       {selectedProduct && (
-        <ProductDetailModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+        <ProductDetailModal product={selectedProduct} onClose={() => setSelectedProduct(null)}  />
       )}
     </div>
   );
